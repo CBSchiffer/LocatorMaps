@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "locatormaps",
+	"version": "${version}",
+	"name": "Locator Maps",
+	"description": "Simple Mod that adds Structure Locator Maps to Minecraft.",
+	"authors": [
+		"Clokkworkk"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/locatormaps/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+          "com.clokkworkk.locatormaps.LocatorMaps"
+		],
+		"fabric-datagen": [
+			"com.clokkworkk.locatormaps.LocatorMapsDataGenerator"
+		],
+		"client": [
+			"com.clokkworkk.locatormaps.LocatorMapsClient"
+		]
+	},
+	"mixins": [
+		"locatormaps.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
