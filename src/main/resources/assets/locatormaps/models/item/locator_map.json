@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "locatormaps:item/locator_map"
+    }
+}
