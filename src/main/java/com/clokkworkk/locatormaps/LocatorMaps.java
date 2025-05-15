@@ -16,11 +16,11 @@ import java.util.function.UnaryOperator;
 public class LocatorMaps implements ModInitializer {
 	public static final String MOD_ID = "locatormaps";
 
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static final ComponentType<String> STRUCTURE_KEY_COMPONENT = register("structure_key", builder -> builder.codec(Codec.STRING));
+	public static final ComponentType<Integer> STRUCTURE_FINDER_RANGE_COMPONENT = register("locator_range", builder -> builder.codec(Codec.INT));
+	public static final ComponentType<Boolean> MAP_SHOW_COORDS_COMPONENT = register("map_show_coords", builder -> builder.codec(Codec.BOOL));
+	public static final ComponentType<Boolean> ALLOW_DUPLICATE_FINDS_COMPONENT = register("allow_duplicate_finds", builder -> builder.codec(Codec.BOOL));
 
 	private static <T>ComponentType<T> register(String name, UnaryOperator<ComponentType.Builder<T>> builderOperator) {
 		return Registry.register(Registries.DATA_COMPONENT_TYPE, Identifier.of(MOD_ID, name), builderOperator.apply(ComponentType.builder()).build());
@@ -28,11 +28,6 @@ public class LocatorMaps implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
-
-		LOGGER.info("Hello Fabric world!");
 		LOGGER.info("Registering Locator Map Item...");
 		Registry.register(Registries.ITEM, Identifier.of(MOD_ID, "locator_map"), LocatorMapItem.INSTANCE);
 	}
