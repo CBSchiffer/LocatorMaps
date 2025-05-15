@@ -17,17 +17,8 @@
 	"entrypoints": {
 		"main": [
           "com.clokkworkk.locatormaps.LocatorMaps"
-		],
-		"fabric-datagen": [
-			"com.clokkworkk.locatormaps.LocatorMapsDataGenerator"
-		],
-		"client": [
-			"com.clokkworkk.locatormaps.LocatorMapsClient"
 		]
 	},
-	"mixins": [
-		"locatormaps.mixins.json"
-	],
 	"depends": {
 		"fabricloader": ">=0.16.14",
 		"minecraft": "~1.21.1",
