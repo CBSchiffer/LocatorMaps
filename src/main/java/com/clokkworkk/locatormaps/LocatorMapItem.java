@@ -104,7 +104,7 @@ public class LocatorMapItem extends NetworkSyncedItem {
                     if(itemStack.getOrDefault(LocatorMaps.DIMENSION_KEY_COMPONENT, "minecraft:overworld").equals("minecraft:overworld")) {
                         LocatorMaps.LOGGER.info("Using default map fill");
                         FilledMapItem.fillExplorationMap(serverWorld, map);
-                    } else {
+                    } else if(itemStack.getOrDefault(LocatorMaps.USE_ADVANCED_TERRAIN_COMPONENT, false)) {
                         LocatorMaps.LOGGER.info("Using custom map fill");
                         fillTerrain(serverWorld, map, user.getY() < 0 ? 0 : (int) user.getY());
                     }

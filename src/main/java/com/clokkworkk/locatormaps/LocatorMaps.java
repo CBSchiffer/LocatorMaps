@@ -31,7 +31,7 @@ public class LocatorMaps implements ModInitializer {
 	public static final ComponentType<Boolean> MAP_SHOW_COORDS_COMPONENT = register("map_show_coords", builder -> builder.codec(Codec.BOOL));
 	public static final ComponentType<Boolean> ALLOW_DUPLICATE_FINDS_COMPONENT = register("allow_duplicate_finds", builder -> builder.codec(Codec.BOOL));
 	public static final ComponentType<String> DIMENSION_KEY_COMPONENT = register("dimension_key", builder -> builder.codec(Codec.STRING));
-
+	public static final ComponentType<Boolean> USE_ADVANCED_TERRAIN_COMPONENT = register("use_advanced_terrain", builder -> builder.codec(Codec.BOOL));
 	private static <T>ComponentType<T> register(String name, UnaryOperator<ComponentType.Builder<T>> builderOperator) {
 		return Registry.register(Registries.DATA_COMPONENT_TYPE, Identifier.of(MOD_ID, name), builderOperator.apply(ComponentType.builder()).build());
 	}
